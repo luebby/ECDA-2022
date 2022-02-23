@@ -4,4 +4,5 @@
 .Ruserdata
 *.log
 *.pdf
+*.aux
 abstract_ECDA2022.synctex.gz
