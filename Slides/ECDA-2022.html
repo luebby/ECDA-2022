@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Acting Data-Driven - But How?</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Karsten Lübke, Matthias Gehrke, Jörg Horst," />
+    <meta name="author" content="Sebastian Sauer, Gero Szepannek" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/plotly.js/./plotly.min.js"></script>
+    <script src="libs/parcats-binding/parcats.js"></script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Acting Data-Driven - But How?
+]
+.author[
+### Karsten Lübke, Matthias Gehrke, Jörg Horst,
+]
+.author[
+### Sebastian Sauer, Gero Szepannek
+]
+.date[
+### ECDA 2022
+]
+
+---
+
+
+
+
+
+
+
+
+
+class: center, inverse, middle
+
+# Intro
+
+---
+
+## Inference from data analysis
+
+Please take part in a (very) short survey: [https://bit.ly/30sJNbm](https://bit.ly/30sJNbm)
+
+&lt;img src="img/Inferenz.jpg" width="25%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Data Literacy
+
+.center[
+&lt;img src="img/DLF.jpg" width="68%" style="display: block; margin: auto;" /&gt;
+]
+
+.footnote[Source: [Schüller (2020)](https://hochschulforumdigitalisierung.de/sites/default/files/dateien/HFD_AP_Nr_53_Data_Literacy_Framework.pdf), cf. [Data Literacy Charter](https://www.stifterverband.org/data-literacy-charter)]
+
+
+---
+
+## A wobbly bridge
+
+From *A1: Data Use Case* to *F2: Act Data-Driven*:
+
+
+.center[&lt;iframe src="https://giphy.com/embed/zQxOLmztiIWOs" width="480" height="350" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;]
+
+.footnote[[via GIPHY](https://giphy.com/gifs/animal-monkey-gibbon-zQxOLmztiIWOs)]
+
+---
+
+## Data science tasks
+
+[Hernán et al. (2019)](https://doi.org/10.1080/09332480.2019.1579578) distinguish: 
+
+- **Description**: "How can women aged 60–80 years with stroke history be partitioned in classes defined by their characteristics?"
+
+- **Prediction**: "What is the probability of having a stroke next year for women with certain characteristics?"
+
+- **Causal inference**: 	"Will starting a statin reduce, on average, the risk of stroke in women with certain characteristics?"
+
+---
+
+## The challenge
+
+.pull-left[
+&lt;img src="img/Storks.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right[
+&lt;br&gt;
+
+.center[How can we be sure that no human or artificial intelligence does not start colonizing storks to increase birth rate?]
+]
+
+---
+
+class: center, inverse, middle
+
+# Results
+
+---
+
+## Back to the Survey: What is inferred?
+
+Structual causal model for data in survey question:
+
+`$$X_1 = U_{X_1}, \; U_{X_1} \sim \mathcal{N}(0,\,10), \quad X_2 = -2X_1+U_{X_2}, \; U_{X_2} \sim \mathcal{N}(0,\,1),$$`
+`$$Y = 5X_1+X_2+U_Y, \quad U_{Y} \sim  \mathcal{N}(0,\,5).$$`
+
+Based on linear regression result: 
+
+- `\(\hat{\beta}^{(1)}_2=-1.505\)` (excluding `\(x_1\)`)
+
+- `\(\hat{\beta}^{(2)}_2=0.909\)`  (including `\(x_1\)`) 
+
+---
+
+## Alluvial diagram 
+
+<div id="htmlwidget-5662dd8924a6e953a0af" style="width:80%;height:432px;" class="parcats html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5662dd8924a6e953a0af">{"x":{"traces":{"parcats":{"type":"parcats","dimensions":[{"label":"Without DAG","values":["do not know","do not know","do not know","y will decrease","y will decrease","y will decrease","y will increase","y will increase","y will increase"],"categoryorder":"array","categoryarray":["y will increase","y will decrease","do not know"]},{"label":"With DAG","values":["do not know","y will decrease","y will increase","do not know","y will decrease","y will increase","do not know","y will decrease","y will increase"],"categoryorder":"array","categoryarray":["y will increase","y will decrease","do not know"]}],"counts":[71,14,48,15,28,23,11,14,30],"line":{"shape":"hspline","color":["#FF0065","#FF0065","#FF0065","#009850","#009850","#009850","#A56F2B","#A56F2B","#A56F2B"]},"hoveron":"color","hoverinfo":"count+probability","labelfont":{"size":24,"color":"black"},"arrangement":"perpendicular","bundlecolors":true,"sortpaths":"forward","tickfont":null,"domain":{"y":[0,1]}}},"layout":[],"shapes":[],"shapes_original":[],"map_curve":[],"map_trace_2_shape":[],"map_type":[],"map_color":[],"parcats_cols":["#FF0065","#FF0065","#FF0065","#009850","#009850","#009850","#A56F2B","#A56F2B","#A56F2B"],"imp":false},"evals":[],"jsHooks":[]}</script>
+
+---
+
+## Alluvial diagram - grouped
+
+<div id="htmlwidget-b814acc7005201146990" style="width:80%;height:432px;" class="parcats html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b814acc7005201146990">{"x":{"traces":{"parcats":{"type":"parcats","dimensions":[{"label":"Type","values":["Causal Meeting","Causal Meeting","Causal Meeting","Causal Meeting","Causal Meeting","Causal Meeting","Causal Meeting","Causal Meeting","Causal Meeting","Instructors","Instructors","Instructors","Instructors","Instructors","Instructors","Instructors","Instructors","Practioners","Practioners","Practioners","Practioners","Practioners","Practioners","Practioners","Practioners","Practioners","Students","Students","Students","Students","Students","Students","Students","Students","Students"],"categoryorder":"array","categoryarray":["Students","Practioners","Instructors","Causal Meeting"]},{"label":"Without DAG","values":["do not know","do not know","do not know","y will decrease","y will decrease","y will decrease","y will increase","y will increase","y will increase","do not know","do not know","do not know","y will decrease","y will decrease","y will decrease","y will increase","y will increase","do not know","do not know","do not know","y will decrease","y will decrease","y will decrease","y will increase","y will increase","y will increase","do not know","do not know","do not know","y will decrease","y will decrease","y will decrease","y will increase","y will increase","y will increase"],"categoryorder":"array","categoryarray":["y will increase","y will decrease","do not know"]},{"label":"With DAG","values":["do not know","y will decrease","y will increase","do not know","y will decrease","y will increase","do not know","y will decrease","y will increase","do not know","y will decrease","y will increase","do not know","y will decrease","y will increase","do not know","y will increase","do not know","y will decrease","y will increase","do not know","y will decrease","y will increase","do not know","y will decrease","y will increase","do not know","y will decrease","y will increase","do not know","y will decrease","y will increase","do not know","y will decrease","y will increase"],"categoryorder":"array","categoryarray":["y will increase","y will decrease","do not know"]}],"counts":[6,6,25,1,3,1,2,2,4,4,1,5,1,5,2,1,4,25,2,7,7,7,7,1,5,11,36,5,11,6,13,13,7,7,11],"line":{"shape":"hspline","color":["#FF0065","#FF0065","#FF0065","#FF0065","#FF0065","#FF0065","#FF0065","#FF0065","#FF0065","#009850","#009850","#009850","#009850","#009850","#009850","#009850","#009850","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#005EAA","#005EAA","#005EAA","#005EAA","#005EAA","#005EAA","#005EAA","#005EAA","#005EAA"]},"hoveron":"color","hoverinfo":"count+probability","labelfont":{"size":24,"color":"black"},"arrangement":"perpendicular","bundlecolors":true,"sortpaths":"forward","tickfont":null,"domain":{"y":[0,1]}}},"layout":[],"shapes":[],"shapes_original":[],"map_curve":[],"map_trace_2_shape":[],"map_type":[],"map_color":[],"parcats_cols":["#FF0065","#FF0065","#FF0065","#FF0065","#FF0065","#FF0065","#FF0065","#FF0065","#FF0065","#009850","#009850","#009850","#009850","#009850","#009850","#009850","#009850","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#A56F2B","#005EAA","#005EAA","#005EAA","#005EAA","#005EAA","#005EAA","#005EAA","#005EAA","#005EAA"],"imp":false},"evals":[],"jsHooks":[]}</script>
+
+
+---
+
+## Numerical summary
+
+Correct on both answers:
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Type &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.correct &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Causal Meeting &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Instructors &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.217 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Practioners &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 72 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.097 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Students &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 109 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.101 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+## Freuqentist inference
+
+
+
+- For the aggregated data the result is with a p-value of `\(5.9322569\times 10^{-5}\)`  statistical discernible `\(&gt; 1/9\)`. 
+
+
+
+- With a p-value of `\(5.6886604\times 10^{-8}\)` there are statistical discernible differences between the groups.
+
+---
+
+## Baysian analysis (uniform prior)
+
+&lt;img src="ECDA-2022_files/figure-html/unnamed-chunk-5-1.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center, inverse, middle
+
+# Outro
+
+---
+
+class: center
+background-image: url("img/RedBlue-Causal.jpg")
+
+---
+
+## If you've just woken up
+
+&lt;br&gt; 
+
+.center[Acting Data-Driven - But How?]
+
+&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#00998A;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"&gt;&lt;/path&gt;&lt;/svg&gt; Far too many draw incorrect conlusions for data analysis. Data analysis alone is not enough and we should try to make our assumptions as transparent and discussible as possible, and integration of DAGs in data science education may be a step in that direction. More research is needed.
+
+
+---
+
+## The wrong lesson
+
+
+[Danny Kaplan](https://cause.vmhost.psu.edu/cause/sites/default/files/uscots/uscots13/opening/6_Daniel_Kaplan.pdf):
+
+&gt; *What I was saying ...*
+Data don’t speak, they inform our judgment.
+Interpret data in the context of a whole system.
+
+--
+
+&gt; *What they were hearing ...*
+The data will say anything you want, depending on how you cut it.
+
+--
+
+&lt;br&gt; 
+
+.center[.fom[How can we provide a framework to discuss science with data with all stakeholders?]]
+
+---
+
+## The End
+
+.center[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:red;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"&gt;&lt;/path&gt;&lt;/svg&gt; Thank you for your participation &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:red;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"&gt;&lt;/path&gt;&lt;/svg&gt;]
+
+
+&lt;br&gt;
+
+- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"&gt;&lt;/path&gt;&lt;/svg&gt;:  [karsten.luebke@fom.de](&lt;mailto:karsten.luebke@fom.de&gt;)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url(img/logo.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 70px;
+  height: 70px;  
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    ':not(.inverse)' + 
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -5,4 +5,6 @@
 *.log
 *.pdf
 *.aux
+**/*_files
+**/libs*
 abstract_ECDA2022.synctex.gz

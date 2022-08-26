@@ -1,0 +1,307 @@
+---
+title: "Acting Data-Driven - But How?"
+author: 
+  - "Karsten Lübke, Matthias Gehrke, Jörg Horst,"
+  - "Sebastian Sauer, Gero Szepannek"
+date: "ECDA 2022"
+output:
+  xaringan::moon_reader:
+    includes:
+      after_body: insert-logo.html
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(out.width="80%", fig.align = "center")
+
+library(icons)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(tidyverse)
+library(janitor)
+library(easyalluvial)
+library(parcats)
+library(mosaic)
+
+theme.fom <- theme_classic(22*1.04)
+theme.fom <- theme.fom
+theme_set(
+  theme.fom  
+)
+
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+
+style_xaringan(
+  header_color = "#00998A",
+  inverse_background_color = "#00998A",
+  footnote_font_size = "0.7rem",
+  background_color = "#f3f3f3",
+  base_font_size = "24px",
+  text_font_size = "1.2rem",
+  colors =c(
+    grey = "#5E6974",
+    green = "#0F710B",
+    red = "#F34213",
+    blue = "#0000FF",
+    orange = "#FF8811",
+    violet = "#DA70D6",
+    purple = "#7A378B",
+    olive = "#808000")
+  )
+```
+
+```{r data, include=FALSE}
+Conclusion <- read.csv2("Inference.csv")
+```
+
+
+class: center, inverse, middle
+
+# Intro
+
+---
+
+## Inference from data analysis
+
+Please take part in a (very) short survey: [https://bit.ly/30sJNbm](https://bit.ly/30sJNbm)
+
+```{r survey, echo=FALSE, out.width = "25%", fig.align="center"}
+include_graphics("img/Inferenz.jpg")
+```
+
+---
+
+## Data Literacy
+
+.center[
+```{r dl-framework, out.width='68%', echo=FALSE}
+include_graphics(c("img/DLF.jpg"))
+```
+]
+
+.footnote[Source: [Schüller (2020)](https://hochschulforumdigitalisierung.de/sites/default/files/dateien/HFD_AP_Nr_53_Data_Literacy_Framework.pdf), cf. [Data Literacy Charter](https://www.stifterverband.org/data-literacy-charter)]
+
+
+---
+
+## A wobbly bridge
+
+From *A1: Data Use Case* to *F2: Act Data-Driven*:
+
+
+.center[<iframe src="https://giphy.com/embed/zQxOLmztiIWOs" width="480" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]
+
+.footnote[[via GIPHY](https://giphy.com/gifs/animal-monkey-gibbon-zQxOLmztiIWOs)]
+
+---
+
+## Data science tasks
+
+[Hernán et al. (2019)](https://doi.org/10.1080/09332480.2019.1579578) distinguish: 
+
+- **Description**: "How can women aged 60–80 years with stroke history be partitioned in classes defined by their characteristics?"
+
+- **Prediction**: "What is the probability of having a stroke next year for women with certain characteristics?"
+
+- **Causal inference**: 	"Will starting a statin reduce, on average, the risk of stroke in women with certain characteristics?"
+
+---
+
+## The challenge
+
+.pull-left[
+```{r echo=FALSE, fig.align='center', out.width='70%'}
+knitr::include_graphics("img/Storks.png")
+```
+
+]
+
+
+.pull-right[
+<br>
+
+.center[How can we be sure that no human or artificial intelligence does not start colonizing storks to increase birth rate?]
+]
+
+---
+
+class: center, inverse, middle
+
+# Results
+
+---
+
+## Back to the Survey: What is inferred?
+
+Structual causal model for data in survey question:
+
+$$X_1 = U_{X_1}, \; U_{X_1} \sim \mathcal{N}(0,\,10), \quad X_2 = -2X_1+U_{X_2}, \; U_{X_2} \sim \mathcal{N}(0,\,1),$$
+$$Y = 5X_1+X_2+U_Y, \quad U_{Y} \sim  \mathcal{N}(0,\,5).$$
+
+Based on linear regression result: 
+
+- $\hat{\beta}^{(1)}_2=-1.505$ (excluding $x_1$)
+
+- $\hat{\beta}^{(2)}_2=0.909$  (including $x_1$) 
+
+---
+
+## Alluvial diagram 
+
+```{r alluvial, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width="80%", fig.width=8, fig.height=6}
+pA1 <- Conclusion %>%
+  select(C1, C2) %>%
+  rename("Without DAG" = C1, "With DAG" = C2) %>%
+  alluvial_wide()
+parcats(pA1, marginal_histograms = FALSE)
+```
+
+---
+
+## Alluvial diagram - grouped
+
+```{r alluvial-grouped, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width="80%", fig.width=8, fig.height=6}
+pA2 <- Conclusion %>%
+  select(Type, C1, C2) %>%
+  rename("Without DAG" = C1, "With DAG" = C2) %>%
+  alluvial_wide()
+parcats(pA2, marginal_histograms = FALSE)
+```
+
+
+---
+
+## Numerical summary
+
+Correct on both answers:
+
+```{r, echo=FALSE}
+Conclusion %>%
+  group_by(Type) %>%
+  summarise(n=n(), p.correct= round(sum(C1.Correct&C2.Correct)/n(),3)) %>%
+  kbl()
+```
+
+---
+
+## Freuqentist inference
+
+```{r, include=FALSE}
+pvalue <- Conclusion %>%
+  mutate(Correct=C1.Correct&C2.Correct) %>%
+  prop.test( ~ Correct, p=1/9, alternative = "greater", data =.) %>%
+  pval()
+```
+
+- For the aggregated data the result is with a p-value of $`r pvalue`$  statistical discernible $> 1/9$. 
+
+```{r, include=FALSE}
+pvalue2 <- Conclusion %>% 
+  mutate(Correct=C1.Correct&C2.Correct) %>%
+  tabyl(Type, Correct) %>%
+  fisher.test() %>%
+  pval()
+```
+
+- With a p-value of $`r pvalue2`$ there are statistical discernible differences between the groups.
+
+---
+
+## Baysian analysis (uniform prior)
+
+```{r echo=FALSE, fig.align='center', out.width="55%", fig.width=8, fig.height=6}
+Tab <- Conclusion %>%
+  mutate(Correct=C1.Correct&C2.Correct) %>%
+  group_by(Type) %>%
+  summarise(n=n(), x = sum(Correct))
+
+posterior <- numeric()
+pi <- (0:1000/1000)
+
+for (i in (Tab$Type))
+{
+  x <- Tab[Tab$Type == i,]$x
+  size <- Tab[Tab$Type == i,]$n
+  cond.prob <- dbinom(x, size, prob = pi)
+  path.prob <- 1 * cond.prob
+  posterior <- c(posterior, (path.prob /sum(path.prob)))
+}
+
+Posterior <- tibble(
+  Type = rep(Tab$Type, each = length(pi)),
+  Pi = rep(pi, length(Tab$Type)),
+  Posterior = posterior
+)
+
+ggplot(Posterior, aes(x=Pi, y=Posterior, group=Type)) +
+  geom_line(aes(color = Type)) +
+  facet_wrap(vars(Type)) + 
+  theme(legend.position="none") +
+  labs(x=expression(pi))
+```
+
+---
+
+class: center, inverse, middle
+
+# Outro
+
+---
+
+class: center
+background-image: url("img/RedBlue-Causal.jpg")
+
+---
+
+## If you've just woken up
+
+<br> 
+
+.center[Acting Data-Driven - But How?]
+
+`r icon_style(fontawesome("hand-point-right", style = "solid"), fill = "#00998A")` Far too many draw incorrect conlusions for data analysis. Data analysis alone is not enough and we should try to make our assumptions as transparent and discussible as possible, and integration of DAGs in data science education may be a step in that direction. More research is needed.
+
+
+---
+
+## The wrong lesson
+
+
+[Danny Kaplan](https://cause.vmhost.psu.edu/cause/sites/default/files/uscots/uscots13/opening/6_Daniel_Kaplan.pdf):
+
+> *What I was saying ...*
+Data don’t speak, they inform our judgment.
+Interpret data in the context of a whole system.
+
+--
+
+> *What they were hearing ...*
+The data will say anything you want, depending on how you cut it.
+
+--
+
+<br> 
+
+.center[.fom[How can we provide a framework to discuss science with data with all stakeholders?]]
+
+---
+
+## The End
+
+.center[`r icon_style(fontawesome("heart", style = "solid"), fill = "red")` Thank you for your participation `r icon_style(fontawesome("heart", style = "solid"), fill = "red")`]
+
+
+<br>
+
+- `r fontawesome("envelope", style = "solid")`:  [karsten.luebke@fom.de](<mailto:karsten.luebke@fom.de>)

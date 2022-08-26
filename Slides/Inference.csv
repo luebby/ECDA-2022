@@ -1,0 +1,255 @@
+"Event";"Type";"C1";"C2";"C1.Correct";"C2.Correct"
+"e1";"Instructors";"y will increase";"y will increase";FALSE;TRUE
+"e1";"Instructors";"do not know";"y will increase";TRUE;TRUE
+"e1";"Instructors";"y will decrease";"do not know";FALSE;FALSE
+"e1";"Instructors";"y will increase";"y will increase";FALSE;TRUE
+"e1";"Instructors";"y will decrease";"y will decrease";FALSE;FALSE
+"e1";"Instructors";"do not know";"do not know";TRUE;FALSE
+"e1";"Instructors";"y will decrease";"y will decrease";FALSE;FALSE
+"e1";"Instructors";"y will decrease";"y will decrease";FALSE;FALSE
+"e1";"Instructors";"do not know";"do not know";TRUE;FALSE
+"e1";"Instructors";"do not know";"y will increase";TRUE;TRUE
+"e1";"Instructors";"y will decrease";"y will increase";FALSE;TRUE
+"e1";"Instructors";"do not know";"y will increase";TRUE;TRUE
+"e1";"Instructors";"y will decrease";"y will decrease";FALSE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"do not know";"y will increase";TRUE;TRUE
+"e2";"Practioners";"y will decrease";"y will decrease";FALSE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"y will decrease";"do not know";FALSE;FALSE
+"e2";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e2";"Practioners";"y will decrease";"y will increase";FALSE;TRUE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"y will decrease";"do not know";FALSE;FALSE
+"e2";"Practioners";"y will decrease";"y will increase";FALSE;TRUE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e2";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e2";"Practioners";"do not know";"y will decrease";TRUE;FALSE
+"e2";"Practioners";"y will decrease";"do not know";FALSE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"y will decrease";"do not know";FALSE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"y will increase";"y will decrease";FALSE;FALSE
+"e2";"Practioners";"y will decrease";"y will increase";FALSE;TRUE
+"e2";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e2";"Practioners";"y will decrease";"do not know";FALSE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"y will increase";"y will decrease";FALSE;FALSE
+"e2";"Practioners";"y will decrease";"y will decrease";FALSE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"y will increase";"y will decrease";FALSE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e2";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e3";"Students";"do not know";"do not know";TRUE;FALSE
+"e3";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e3";"Students";"do not know";"do not know";TRUE;FALSE
+"e3";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e3";"Students";"do not know";"do not know";TRUE;FALSE
+"e3";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e3";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e3";"Students";"y will increase";"y will increase";FALSE;TRUE
+"e3";"Students";"y will increase";"do not know";FALSE;FALSE
+"e3";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e3";"Students";"y will increase";"do not know";FALSE;FALSE
+"e3";"Students";"y will increase";"y will increase";FALSE;TRUE
+"e3";"Students";"do not know";"do not know";TRUE;FALSE
+"e3";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e3";"Students";"do not know";"y will decrease";TRUE;FALSE
+"e3";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e3";"Students";"y will increase";"y will decrease";FALSE;FALSE
+"e3";"Students";"do not know";"do not know";TRUE;FALSE
+"e4";"Students";"y will increase";"y will decrease";FALSE;FALSE
+"e4";"Students";"y will increase";"y will decrease";FALSE;FALSE
+"e4";"Students";"y will increase";"do not know";FALSE;FALSE
+"e4";"Students";"do not know";"y will increase";TRUE;TRUE
+"e4";"Students";"do not know";"do not know";TRUE;FALSE
+"e4";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e4";"Students";"do not know";"do not know";TRUE;FALSE
+"e4";"Students";"do not know";"y will decrease";TRUE;FALSE
+"e4";"Students";"do not know";"do not know";TRUE;FALSE
+"e4";"Students";"do not know";"do not know";TRUE;FALSE
+"e4";"Students";"do not know";"do not know";TRUE;FALSE
+"e5";"Instructors";"y will increase";"y will increase";FALSE;TRUE
+"e5";"Instructors";"do not know";"y will increase";TRUE;TRUE
+"e5";"Instructors";"y will decrease";"y will decrease";FALSE;FALSE
+"e5";"Instructors";"do not know";"y will decrease";TRUE;FALSE
+"e5";"Instructors";"y will decrease";"y will increase";FALSE;TRUE
+"e5";"Instructors";"y will increase";"do not know";FALSE;FALSE
+"e5";"Instructors";"do not know";"y will increase";TRUE;TRUE
+"e5";"Instructors";"do not know";"do not know";TRUE;FALSE
+"e5";"Instructors";"y will increase";"y will increase";FALSE;TRUE
+"e5";"Instructors";"do not know";"do not know";TRUE;FALSE
+"e6";"Students";"do not know";"do not know";TRUE;FALSE
+"e6";"Students";"y will increase";"y will increase";FALSE;TRUE
+"e6";"Students";"y will increase";"y will decrease";FALSE;FALSE
+"e6";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e6";"Students";"do not know";"y will increase";TRUE;TRUE
+"e6";"Students";"do not know";"y will decrease";TRUE;FALSE
+"e6";"Students";"do not know";"do not know";TRUE;FALSE
+"e6";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e6";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e6";"Students";"do not know";"y will increase";TRUE;TRUE
+"e6";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e7";"Causal Meeting";"y will increase";"do not know";FALSE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will decrease";TRUE;FALSE
+"e7";"Causal Meeting";"y will decrease";"y will increase";FALSE;TRUE
+"e7";"Causal Meeting";"do not know";"do not know";TRUE;FALSE
+"e7";"Causal Meeting";"y will decrease";"y will decrease";FALSE;FALSE
+"e7";"Causal Meeting";"do not know";"do not know";TRUE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"y will decrease";"y will decrease";FALSE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"y will decrease";"y will decrease";FALSE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will decrease";TRUE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will decrease";TRUE;FALSE
+"e7";"Causal Meeting";"y will increase";"do not know";FALSE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will decrease";TRUE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"do not know";TRUE;FALSE
+"e7";"Causal Meeting";"y will increase";"y will increase";FALSE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"do not know";TRUE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"do not know";TRUE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"y will increase";"y will increase";FALSE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"do not know";TRUE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will decrease";TRUE;FALSE
+"e7";"Causal Meeting";"y will increase";"y will increase";FALSE;TRUE
+"e7";"Causal Meeting";"y will increase";"y will decrease";FALSE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"y will increase";"y will decrease";FALSE;FALSE
+"e7";"Causal Meeting";"do not know";"y will increase";TRUE;TRUE
+"e7";"Causal Meeting";"do not know";"y will decrease";TRUE;FALSE
+"e7";"Causal Meeting";"y will increase";"y will increase";FALSE;TRUE
+"e7";"Causal Meeting";"y will decrease";"do not know";FALSE;FALSE
+"e8";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e8";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e8";"Practioners";"do not know";"y will increase";TRUE;TRUE
+"e8";"Practioners";"y will decrease";"y will increase";FALSE;TRUE
+"e8";"Practioners";"do not know";"y will increase";TRUE;TRUE
+"e8";"Practioners";"y will decrease";"y will increase";FALSE;TRUE
+"e8";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e8";"Practioners";"do not know";"y will increase";TRUE;TRUE
+"e8";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e8";"Practioners";"do not know";"y will decrease";TRUE;FALSE
+"e8";"Practioners";"do not know";"y will increase";TRUE;TRUE
+"e8";"Practioners";"y will decrease";"y will decrease";FALSE;FALSE
+"e8";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e8";"Practioners";"do not know";"y will increase";TRUE;TRUE
+"e8";"Practioners";"y will decrease";"do not know";FALSE;FALSE
+"e8";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e8";"Practioners";"do not know";"y will increase";TRUE;TRUE
+"e8";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e8";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e9";"Practioners";"y will decrease";"y will decrease";FALSE;FALSE
+"e9";"Practioners";"y will increase";"do not know";FALSE;FALSE
+"e9";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e9";"Practioners";"y will increase";"y will decrease";FALSE;FALSE
+"e9";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e9";"Practioners";"y will decrease";"y will decrease";FALSE;FALSE
+"e9";"Practioners";"y will decrease";"y will decrease";FALSE;FALSE
+"e9";"Practioners";"y will increase";"y will increase";FALSE;TRUE
+"e9";"Practioners";"y will decrease";"y will decrease";FALSE;FALSE
+"e9";"Practioners";"y will decrease";"do not know";FALSE;FALSE
+"e9";"Practioners";"y will increase";"y will decrease";FALSE;FALSE
+"e9";"Practioners";"y will decrease";"y will increase";FALSE;TRUE
+"e9";"Practioners";"do not know";"do not know";TRUE;FALSE
+"e9";"Practioners";"y will decrease";"y will increase";FALSE;TRUE
+"e10";"Students";"do not know";"y will decrease";TRUE;FALSE
+"e10";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"y will increase";TRUE;TRUE
+"e10";"Students";"do not know";"y will increase";TRUE;TRUE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will decrease";"do not know";FALSE;FALSE
+"e10";"Students";"y will increase";"do not know";FALSE;FALSE
+"e10";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e10";"Students";"do not know";"y will increase";TRUE;TRUE
+"e10";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will decrease";"do not know";FALSE;FALSE
+"e10";"Students";"y will increase";"y will increase";FALSE;TRUE
+"e10";"Students";"y will increase";"y will decrease";FALSE;FALSE
+"e10";"Students";"y will increase";"y will decrease";FALSE;FALSE
+"e10";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e10";"Students";"y will increase";"y will decrease";FALSE;FALSE
+"e10";"Students";"y will increase";"y will increase";FALSE;TRUE
+"e10";"Students";"y will decrease";"do not know";FALSE;FALSE
+"e10";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e10";"Students";"y will decrease";"do not know";FALSE;FALSE
+"e10";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will increase";"y will increase";FALSE;TRUE
+"e10";"Students";"y will decrease";"do not know";FALSE;FALSE
+"e10";"Students";"do not know";"y will increase";TRUE;TRUE
+"e10";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e10";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"y will increase";TRUE;TRUE
+"e10";"Students";"y will increase";"do not know";FALSE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will increase";"y will increase";FALSE;TRUE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will increase";"do not know";FALSE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e10";"Students";"do not know";"y will increase";TRUE;TRUE
+"e10";"Students";"y will decrease";"do not know";FALSE;FALSE
+"e10";"Students";"y will increase";"y will increase";FALSE;TRUE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"do not know";"y will increase";TRUE;TRUE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will increase";"do not know";FALSE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will increase";"y will increase";FALSE;TRUE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will decrease";"y will increase";FALSE;TRUE
+"e10";"Students";"do not know";"y will decrease";TRUE;FALSE
+"e10";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e10";"Students";"do not know";"y will increase";TRUE;TRUE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will decrease";"y will decrease";FALSE;FALSE
+"e10";"Students";"do not know";"do not know";TRUE;FALSE
+"e10";"Students";"y will increase";"y will increase";FALSE;TRUE
+"e10";"Students";"y will increase";"y will increase";FALSE;TRUE
