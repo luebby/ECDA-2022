@@ -1,8 +1,10 @@
 ---
 title: "Acting Data-Driven - But How?"
 author: 
-  - "Karsten Lübke, Matthias Gehrke, Jörg Horst,"
-  - "Sebastian Sauer, Gero Szepannek"
+  - "Karsten Lübke, Matthias Gehrke (FOM)"
+  - "Jörg Horst (FH Bielfeld)"
+  - "Sebastian Sauer (HS Ansbach)"
+  - "Gero Szepannek (HS Stralsund)"
 date: "ECDA 2022"
 output:
   xaringan::moon_reader:
@@ -270,7 +272,7 @@ background-image: url("img/RedBlue-Causal.jpg")
 
 .center[Acting Data-Driven - But How?]
 
-`r icon_style(fontawesome("hand-point-right", style = "solid"), fill = "#00998A")` Far too many draw incorrect conlusions for data analysis. Data analysis alone is not enough and we should try to make our assumptions as transparent and discussible as possible, and integration of DAGs in data science education may be a step in that direction. More research is needed.
+`r icon_style(fontawesome("hand-point-right", style = "solid"), fill = "#00998A")` Far too many draw incorrect conlusions from data analysis. Data analysis skills are not enough to avoid drowning in the data. Integration of DAGs in data science education may be a step in that direction. More research is needed.
 
 
 ---
