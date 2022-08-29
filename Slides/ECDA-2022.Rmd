@@ -64,7 +64,7 @@ style_xaringan(
 ```
 
 ```{r data, include=FALSE}
-Conclusion <- read.csv2("Inference.csv")
+Conclusion <- read.csv2(here::here("Slides/Inference.csv"))
 ```
 
 
@@ -79,7 +79,9 @@ class: center, inverse, middle
 Please take part in a (very) short survey: [https://bit.ly/30sJNbm](https://bit.ly/30sJNbm)
 
 ```{r survey, echo=FALSE, out.width = "25%", fig.align="center"}
-include_graphics("img/Inferenz.jpg")
+img_path <- here::here("Slides", "img", "Inferenz.jpg")
+stopifnot(file.exists(img_path))
+knitr::include_graphics(img_path, rel_path = FALSE)
 ```
 
 ---
@@ -88,7 +90,7 @@ include_graphics("img/Inferenz.jpg")
 
 .center[
 ```{r dl-framework, out.width='68%', echo=FALSE}
-include_graphics(c("img/DLF.jpg"))
+knitr::include_graphics(here::here("Slides/img/DLF.jpg"), rel_path = FALSE)
 ```
 ]
 
@@ -124,7 +126,7 @@ From *A1: Data Use Case* to *F2: Act Data-Driven*:
 
 .pull-left[
 ```{r echo=FALSE, fig.align='center', out.width='70%'}
-knitr::include_graphics("img/Storks.png")
+knitr::include_graphics(here::here("Slides/img/Storks.png"), rel_path = FALSE)
 ```
 
 ]
@@ -156,6 +158,25 @@ Based on linear regression result:
 - $\hat{\beta}^{(1)}_2=-1.505$ (excluding $x_1$)
 
 - $\hat{\beta}^{(2)}_2=0.909$  (including $x_1$) 
+
+---
+
+
+## DAG
+
+
+```{r eval = FALSE, echo = FALSE}
+# throws error
+ggdag::dagify(y ~ x1 + x2, x2 ~ x1) %>% 
+  ggdag::ggdag() +
+  ggdag::theme_dag()
+```
+
+
+```{r fig.align='center', echo = FALSE, out.width="70%"}
+include_graphics(here::here("Slides", "img", "causal.png"), rel_path = FALSE)
+```
+
 
 ---
 
