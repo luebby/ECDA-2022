@@ -227,7 +227,7 @@ pvalue <- Conclusion %>%
   pval()
 ```
 
-- For the aggregated data the result is with a p-value of $`r pvalue`$  statistical discernible $> 1/9$. 
+- For the aggregated data the result is with a p-value of $`r pvalue`$  statistically discernible $> 1/9$. 
 
 ```{r, include=FALSE}
 pvalue2 <- Conclusion %>% 
@@ -237,7 +237,7 @@ pvalue2 <- Conclusion %>%
   pval()
 ```
 
-- With a p-value of $`r pvalue2`$ there are statistical discernible differences between the groups.
+- With a p-value of $`r pvalue2`$ there are statistically discernible differences between the groups.
 
 ---
 
