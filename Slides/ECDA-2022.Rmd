@@ -1,5 +1,5 @@
 ---
-title: "Acting Data-Driven - But How?"
+title: "Acting Data-Driven -- But How?"
 author: 
   - "Karsten Lübke, Matthias Gehrke (FOM)"
   - "Jörg Horst (FH Bielfeld)"
@@ -218,7 +218,7 @@ Conclusion %>%
 
 ---
 
-## Freuqentist inference
+## Frequentist inference
 
 ```{r, include=FALSE}
 pvalue <- Conclusion %>%
@@ -227,7 +227,7 @@ pvalue <- Conclusion %>%
   pval()
 ```
 
-- For the aggregated data the result is with a p-value of $`r pvalue`$  statistically discernible $> 1/9$. 
+- For the aggregated data the result is with a p-value of $`r ifelse(pvalue < 0.0001, "< 0.0001", sprintf("%.4f", pvalue))`$  statistically discernible to be $> 1/9$. 
 
 ```{r, include=FALSE}
 pvalue2 <- Conclusion %>% 
@@ -237,7 +237,7 @@ pvalue2 <- Conclusion %>%
   pval()
 ```
 
-- With a p-value of $`r pvalue2`$ there are statistically discernible differences between the groups.
+- With a p-value of $`r ifelse(pvalue < 0.0001, "< 0.0001", sprintf("%.8f", pvalue2))`$ there are statistically discernible differences between the groups.
 
 ---
 
@@ -291,7 +291,7 @@ background-image: url("img/RedBlue-Causal.jpg")
 
 <br> 
 
-.center[Acting Data-Driven - But How?]
+.center[Acting Data-Driven &ndash; But How?]
 
 `r icon_style(fontawesome("hand-point-right", style = "solid"), fill = "#00998A")` Far too many draw incorrect conlusions from data analysis. Data analysis skills are not enough to avoid drowning in the data. Integration of DAGs in data science education may be a step in that direction. More research is needed.
 
