@@ -2,7 +2,7 @@
 title: "Acting Data-Driven -- But How?"
 author: 
   - "Karsten Lübke, Matthias Gehrke (FOM)"
-  - "Jörg Horst (FH Bielfeld)"
+  - "Jörg Horst (FH Bielefeld)"
   - "Sebastian Sauer (HS Ansbach)"
   - "Gero Szepannek (HS Stralsund)"
 date: "ECDA 2022"
@@ -148,16 +148,17 @@ class: center, inverse, middle
 
 ## Back to the Survey: What is inferred?
 
-Structual causal model for data in survey question:
+Structural causal model for data in survey question:
 
 $$X_1 = U_{X_1}, \; U_{X_1} \sim \mathcal{N}(0,\,10), \quad X_2 = -2X_1+U_{X_2}, \; U_{X_2} \sim \mathcal{N}(0,\,1),$$
-$$Y = 5X_1+X_2+U_Y, \quad U_{Y} \sim  \mathcal{N}(0,\,5).$$
+$$Y = 5X_1+X_2+U_Y, \; U_{Y} \sim  \mathcal{N}(0,\,5).$$
+
 
 Based on linear regression result: 
 
-- $\hat{\beta}^{(1)}_2=-1.505$ (excluding $x_1$)
+(1) $\hat{y}= - 0.042 \color{green}{- 1.505} \cdot x_2$
 
-- $\hat{\beta}^{(2)}_2=0.909$  (including $x_1$) 
+(2) $\hat{y}=- 0.025 + 4.832 \cdot x_1 -0.042 \color{green}{+ 0.909} \cdot x_2$
 
 ---
 
@@ -293,7 +294,11 @@ background-image: url("img/RedBlue-Causal.jpg")
 
 .center[Acting Data-Driven &ndash; But How?]
 
-`r icon_style(fontawesome("hand-point-right", style = "solid"), fill = "#00998A")` Far too many draw incorrect conlusions from data analysis. Data analysis skills are not enough to avoid drowning in the data. Integration of DAGs in data science education may be a step in that direction. More research is needed.
+`r icon_style(fontawesome("hand-point-right", style = "solid"), fill = "#00998A")` Far too many draw incorrect conclusions from data analysis. 
+
+`r icon_style(fontawesome("hand-point-right", style = "solid"), fill = "#00998A")` Data analysis skills are not enough to avoid drowning in the data. 
+
+`r icon_style(fontawesome("hand-point-right", style = "solid"), fill = "#00998A")` Integration of DAGs in data science education may be a step in another direction.
 
 
 ---
@@ -312,18 +317,16 @@ Interpret data in the context of a whole system.
 > *What they were hearing ...*
 The data will say anything you want, depending on how you cut it.
 
---
-
-<br> 
-
-.center[.fom[How can we provide a framework to discuss science with data with all stakeholders?]]
 
 ---
 
 ## The End
 
-.center[`r icon_style(fontawesome("heart", style = "solid"), fill = "red")` Thank you for your participation `r icon_style(fontawesome("heart", style = "solid"), fill = "red")`]
+.center[.fom[How can we provide a framework to discuss science with data with all stakeholders?]]
 
+<br>
+
+.center[`r icon_style(fontawesome("heart", style = "solid"), fill = "red")` Thank you for your participation `r icon_style(fontawesome("heart", style = "solid"), fill = "red")`]
 
 <br>
 
