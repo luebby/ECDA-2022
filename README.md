@@ -1,6 +1,6 @@
 # ECDA 2022 Slides
 
-Materials for the [European Conference on Data Analysis 2022]((http://ecda2022.unina.it/) presentation **Acting Data-Driven – But How?**.
+Materials for the [European Conference on Data Analysis 2022](http://ecda2022.unina.it/) presentation **Acting Data-Driven – But How?**.
 
 
 ## Licence
