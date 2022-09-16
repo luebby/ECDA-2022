@@ -3,7 +3,7 @@
 .RData
 .Ruserdata
 *.log
-*.pdf
+
 *.aux
 **/*_files
 **/libs*
