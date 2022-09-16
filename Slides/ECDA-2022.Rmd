@@ -269,7 +269,7 @@ Posterior <- tibble(
 )
 
 ggplot(Posterior, aes(x=Pi, y=Posterior, group=Type)) +
-  geom_line(aes(color = Type)) +
+  geom_line(aes(color = Type), size = 1.7) +
   facet_wrap(vars(Type)) + 
   theme(legend.position="none") +
   labs(x=expression(pi))
